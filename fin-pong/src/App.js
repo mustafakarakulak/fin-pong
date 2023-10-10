@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/404';
+import ChatApp from "./pages/ChatApp/ChatApp";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/MainPage" element={<MainPage />} />
         <Route path="/404" element={<NotFoundPage />} />
+        <Route path='/chat' element={<ChatApp />} />
       </Routes>
     </Router>
   );
