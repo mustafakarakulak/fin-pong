@@ -4,7 +4,7 @@ import './ChatApp.scss';
 class ChatApp extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { contacts: [{text:'Şerif Ali Palta', active:true},{text:'Resul Bozdemir', active:true},{text:'Melih Yumak', active:false}, {text:'Mert İsmail Köroğlu', active:false}],
+      this.state = { contacts: [{text:'Şerif Ali Palta', active:false},{text:'Resul Bozdemir', active:true},{text:'Melih Yumak', active:false}, {text:'Mert İsmail Köroğlu', active:false}],
                      messages: [{id:'1',text:'Hi Molly!', me:true},{id:'2',text:'Hey, how are you doing?', me:false},{id:'3',text:'It\'s been a while', me:false},{id:'4',text:'Yes it is!', me:true},{id:'5',text:'Have you ever heard of lorem ipsum?', me:true},{id:'6',text:'No, what is it?', me:false},{id:'7',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', me:true}],
                      message: ''
                    };
