@@ -12,6 +12,8 @@ export default function Context({children}){
             if(res.data){
                 setUserObject(res.data);
             }
+        }).catch(error => {
+            console.log("Error",error);
         })
     },[])
     return ( <myContext.Provider value={userObject}>{children}</myContext.Provider> );

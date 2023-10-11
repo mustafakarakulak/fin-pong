@@ -133,9 +133,6 @@ function AuthorizeButton() {
 
   const handleAuthorize = () => {
     const authorizeUrl = `http://localhost:5001/api/users/42`;
-
-    console.log("Authorize URL:", authorizeUrl);
-
     window.location.href = authorizeUrl;
   };
 
