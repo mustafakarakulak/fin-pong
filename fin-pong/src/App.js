@@ -7,11 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './pages/404';
 import ChatApp from "./pages/ChatApp/ChatApp";
 import { useContext } from "react";
-import Context, { myContext } from './Context';
+import Context, { myContext } from './context/Context';
 
 function App() {
   const userObject = useContext(myContext);
-  console.log("user",userObject);
   return (
     <Context>
     <Router>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
-import { myContext } from "../Context";
+import { myContext } from "../context/Context";
 
 const Container = styled.div`
     display: flex;
@@ -99,7 +99,6 @@ const MainPage = (Username, Ranked, ProfilePhoto, Wins, Lose) => {
     };
 
     const userObject = useContext(myContext);
-    console.log("userrrr", userObject);
     return (
         <Container>
             <BlurDiv>
