@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import './Button.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Button = styled.button`
     background-color: #222;
@@ -34,6 +35,17 @@ const Container = styled.div`
 `;
 
 const Menu = () => {
+
+    const handleLogout = () => {
+        console.log("anan");
+        axios.get("http://localhost:5001/api/logout").then(res => {
+            if(res.data){
+                console.log("anan");
+                window.location.href = "/";
+                console.log("logout success");
+            }
+        })
+    }
     
     const navigate = useNavigate();
     
@@ -45,7 +57,7 @@ const Menu = () => {
         <Container>
             <Button className='mainmenu' onClick={() => handleClick("/404")}> Play </Button>
             <Button className='mainmenu' onClick={() => handleClick("/chat")}> Chats </Button>
-            <Button className='mainmenu' onClick={() => handleClick("/LoginPage")}> Log Out </Button>
+            <Button className='mainmenu' onClick={handleLogout}> Log Out </Button>
         </Container>
     )
 };
