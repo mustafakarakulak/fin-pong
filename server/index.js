@@ -43,14 +43,11 @@ passport.use(new FortyTwoStrategy({
     callbackURL: 'http://localhost:5001/api/users/42/return'
 },
     async (accessToken, refreshToken, profile, cb) => {
-        //console.log(profile);
         cb(null,profile);
         const currentUser = await userModel42.findOne({ username: profile.username });
         if (currentUser) {
             cb(null,profile)
-            //console.log("User Already", currentUser);
         } else {
-            //console.log(profile.username);
             const newUser = await userModel42.create({
                 username: profile.username,
                 displayName: profile.displayName,
@@ -64,6 +61,12 @@ app.get('/', (req, res) => {
     res.send(`Hoşegeldin`);
 });
 
+app.get('/404', (req, res) => {
+    // JSON olarak yanıt gönder
+    const response = { message: 'Hoşgeldin' };
+    res.json(response);
+  });
+
 app.get("/api/users/42", passport.authenticate('42'));
 app.get("/api/users/42/return", passport.authenticate('42', { failureRedirect: '/login' }),
     function (req, res) {
@@ -73,13 +76,6 @@ app.get("/api/users/42/return", passport.authenticate('42', { failureRedirect: '
 app.get("/api/ali",(req,res) => {
     res.send(req.user);
 });
-
-app.get("/api/logout", (req,res) => {
-    if(req.user){
-        req.logout();
-        res.send("success");
-    }
-})
 
 const port = process.env.PORT || 5001;
 const uri = process.env.ATLAS_URI;
