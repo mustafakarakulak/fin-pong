@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import { myContext } from "../Context";
 
 const Container = styled.div`
     display: flex;
@@ -89,10 +90,7 @@ const ProfileInfoText = styled.h1`
 `;
 
 const MainPage = (Username, Ranked, ProfilePhoto, Wins, Lose) => {
-
-    Username = "mkarakul";
     Ranked = 600;
-    ProfilePhoto = 'https://cdn.intra.42.fr/users/986bbaa1233d95ebdc27dd5682fbb85d/mkarakul.jpg';
     Wins = 10;
     Lose = 0;
 
@@ -100,24 +98,26 @@ const MainPage = (Username, Ranked, ProfilePhoto, Wins, Lose) => {
         console.log("Setting pop-up Clicked");
     };
 
+    const userObject = useContext(myContext);
+    console.log("userrrr", userObject);
     return (
         <Container>
-            <BlurDiv>  
+            <BlurDiv>
                 <LeftBar> <Menu /> </LeftBar>
                 <RightBar>
                     <ProfileAccount onClick={handleSettings}>
-                        <ProfileImage src={ProfilePhoto} alt="profile-photo"/>
-                        <ProfileName>{Username}</ProfileName>
+                        <ProfileImage src={userObject._json.image.link} alt="profile-photo" />
+                        <ProfileName>{userObject.displayName}</ProfileName>
                     </ProfileAccount>
                     <ProfileInfo>
                         <ProfileRank>Rank: {Ranked}</ProfileRank>
                         <ProfileInfoText>Wins: {Wins}</ProfileInfoText>
                         <ProfileInfoText>Lose: {Lose}</ProfileInfoText>
                     </ProfileInfo>
-                </RightBar> 
+                </RightBar>
             </BlurDiv>
             <Footer />
-        </Container>        
+        </Container>
     );
 };
 

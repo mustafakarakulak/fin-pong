@@ -129,31 +129,23 @@ const StyledButton = styled.button`
   }
 `;
 
-function AuthorizeButton () {
-  
-  const handleAuthorize = () => {
-    const clientId = "u-s4t2ud-759580fc23449c7d78147146e254947c7eb04235b8e0694a195909836988df92";
-    const redirectUri = "http%3A%2F%2Flocalhost%3A3000%2FMainPage";
-    const responseType = "code";
+function AuthorizeButton() {
 
-    const authorizeUrl = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`;
+  const handleAuthorize = () => {
+    const authorizeUrl = `http://localhost:5001/api/users/42`;
 
     console.log("Authorize URL:", authorizeUrl);
 
     window.location.href = authorizeUrl;
   };
 
-  const hanldeMainPage = () => {
-    window.location.href = "http://localhost:3000/MainPage";
-  }
-
   return (
-    <StyledButton onClick={hanldeMainPage} style={{ '--color': '#6eff3e' }}>
+    <StyledButton onClick={handleAuthorize} style={{ '--color': '#6eff3e' }}>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-    Authorize Intra
+      Authorize Intra
     </StyledButton>
   )
 }
