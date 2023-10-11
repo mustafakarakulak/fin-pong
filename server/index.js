@@ -45,18 +45,18 @@ passport.use(new FortyTwoStrategy({
     async (accessToken, refreshToken, profile, cb) => {
         //console.log(profile);
         cb(null,profile);
-        // const currentUser = await userModel42.findOne({ username: profile.username });
-        // if (currentUser) {
-        //     cb(null,currentUser)
-        //     console.log("User Already", currentUser);
-        // } else {
-        //     console.log(profile.username);
-        //     const newUser = await userModel42.create({
-        //         username: profile.username,
-        //         displayName: profile.displayName,
-        //     });
-        //     cb(null,newUser);
-        // }
+        const currentUser = await userModel42.findOne({ username: profile.username });
+        if (currentUser) {
+            cb(null,profile)
+            //console.log("User Already", currentUser);
+        } else {
+            //console.log(profile.username);
+            const newUser = await userModel42.create({
+                username: profile.username,
+                displayName: profile.displayName,
+            });
+            cb(null,profile);
+        }
     }));
 
 
