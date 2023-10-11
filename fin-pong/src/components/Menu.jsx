@@ -19,6 +19,10 @@ const Button = styled.button`
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
+
+    @media (min-width: 768px) {
+        padding: 30px;
+    }
 `;
 
 const Container = styled.div`

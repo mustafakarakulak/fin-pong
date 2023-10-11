@@ -36,6 +36,9 @@ const RightBar = styled.div`
     flex-direction: column;
     padding: 130px;
     background-color: transparent;
+    @media (min-width: 768px) {
+        padding: 40px;
+    }
 `;
 
 const ProfileAccount = styled.div`

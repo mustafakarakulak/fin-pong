@@ -21,7 +21,7 @@ const LoginPage = () => {
             <Banner src={require('./logo.png')} alt="banner"/>
                     <div className="form"> 
                         <div className="inputBox"> 
-                            <AuthorizeButton address='/MainPage' />
+                            <AuthorizeButton/>
                             <Footer style={{ color: 'white' }}/>
                         </div> 
                     </div> 
