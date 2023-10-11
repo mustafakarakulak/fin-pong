@@ -89,16 +89,17 @@ const ProfileInfoText = styled.h1`
     color: black;
 `;
 
-const MainPage = (Username, Ranked, ProfilePhoto, Wins, Lose) => {
+const MainPage = (Ranked, Wins, Lose) => {
     Ranked = 600;
     Wins = 10;
     Lose = 0;
+
+    const userObject = useContext(myContext);
 
     const handleSettings = () => {
         console.log("Setting pop-up Clicked");
     };
 
-    const userObject = useContext(myContext);
     return (
         <Container>
             <BlurDiv>
