@@ -74,6 +74,13 @@ app.get("/api/ali",(req,res) => {
     res.send(req.user);
 });
 
+app.get("/api/logout", (req,res) => {
+    if(req.user){
+        req.logout();
+        res.send("success");
+    }
+})
+
 const port = process.env.PORT || 5001;
 const uri = process.env.ATLAS_URI;
 
