@@ -37,14 +37,12 @@ const Container = styled.div`
 const Menu = () => {
 
     const handleLogout = () => {
-        console.log("anan");
-        axios.get("http://localhost:5001/api/logout").then(res => {
-            if(res.data){
-                console.log("anan");
+        axios.get("http://localhost:5001/api/logout", {withCredentials: true}).then(res => {
+            if(res.data === "done"){
                 window.location.href = "/";
-                console.log("logout success");
             }
         })
+
     }
     
     const navigate = useNavigate();
@@ -57,7 +55,7 @@ const Menu = () => {
         <Container>
             <Button className='mainmenu' onClick={() => handleClick("/404")}> Play </Button>
             <Button className='mainmenu' onClick={() => handleClick("/chat")}> Chats </Button>
-            <Button className='mainmenu' onClick={handleLogout}> Log Out </Button>
+            <Button className='mainmenu' onClick={() => handleClick("/LoginPage")}> Log Out </Button>
         </Container>
     )
 };
