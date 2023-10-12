@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import './Button.css';
+import './MenuButton.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const Button = styled.button`
     background-color: #222;
@@ -35,15 +34,6 @@ const Container = styled.div`
 `;
 
 const Menu = () => {
-
-    const handleLogout = () => {
-        axios.get("http://localhost:5001/api/logout", {withCredentials: true}).then(res => {
-            if(res.data === "done"){
-                window.location.href = "/";
-            }
-        })
-
-    }
     
     const navigate = useNavigate();
     
