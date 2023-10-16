@@ -13,7 +13,7 @@ const FooterDiv = styled.div`
 const FooterText = styled.h1`
     font-size: 13px;
     font-weight: 900;
-    color: black;
+    color: white;
 `;
 
 const Footer = () => {
