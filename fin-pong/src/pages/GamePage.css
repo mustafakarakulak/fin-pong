@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: darkorange;
+}
+
+canvas {
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    border-left: dotted 5px black;
+    border-right: dotted 5px black;
+    padding: 200px;
+    cursor: grab;
+    margin-left: 5px;
+}

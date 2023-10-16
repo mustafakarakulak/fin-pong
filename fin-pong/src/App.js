@@ -8,6 +8,7 @@ import NotFoundPage from './pages/404';
 import ChatApp from "./pages/ChatApp/ChatApp";
 import { useContext } from "react";
 import Context, { myContext } from './context/Context';
+import GamePage from "./pages/GamePage";
 
 function App() {
   const userObject = useContext(myContext);
@@ -20,6 +21,7 @@ function App() {
         <Route path="/MainPage" element={userObject ? <MainPage /> : <LoginPage/>} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path='/chat' element={userObject ? <ChatApp /> : <LoginPage/>} />
+        <Route path='/GamePage' element={userObject ? <GamePage /> : <LoginPage/>} />
       </Routes>
     </Router>
     </Context>

@@ -43,7 +43,7 @@ const Menu = () => {
 
     return (
         <Container>
-            <Button className='mainmenu' onClick={() => handleClick("/404")}> Play </Button>
+            <Button className='mainmenu' onClick={() => handleClick("/GamePage")}> Play </Button>
             <Button className='mainmenu' onClick={() => handleClick("/chat")}> Chats </Button>
             <Button className='mainmenu' onClick={() => handleClick("/LoginPage")}> Log Out </Button>
         </Container>
