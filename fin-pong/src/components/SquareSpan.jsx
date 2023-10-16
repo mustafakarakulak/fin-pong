@@ -1,13 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-const animate = keyframes`
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-`;
+import styled from 'styled-components';
 
 const Section1 = styled.span`
   position: relative;

@@ -14,7 +14,7 @@ const Banner = styled.img`
 
 const LoginPage = () => {
     return (
-    <section>
+    <section className="sec">
         <SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/><SqauareArray/>
         <div className="signin"> 
             <div className="content"> 
