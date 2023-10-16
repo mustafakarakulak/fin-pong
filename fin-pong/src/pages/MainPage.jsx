@@ -67,6 +67,7 @@ const MainPage = (Ranked, Wins, Lose) => {
       </Container>
     );
   } else {
+    console.log("Hata amk hata");
     return (
       <div>
         Kullanıcı bilgileri yüklenemedi veya geçersiz.

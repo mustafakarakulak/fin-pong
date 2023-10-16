@@ -4,6 +4,7 @@ import AuthorizeButton from '../components/AuthorizeButton';
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import SqauareArray from "../components/SquareArray";
+import YourComponent from "../context/Auth";
 
 const Banner = styled.img`
     display: block;
@@ -21,6 +22,7 @@ const LoginPage = () => {
             <Banner src={require('../assets/logo.png')} alt="banner"/>
                     <div className="form"> 
                         <div className="inputBox"> 
+                            <YourComponent/>
                             <AuthorizeButton/>
                             <Footer/>
                         </div> 
